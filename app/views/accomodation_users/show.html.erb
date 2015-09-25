@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @accomodation_user.user_id %>
+</p>
+
+<p>
+  <strong>Accomodation:</strong>
+  <%= @accomodation_user.accomodation_id %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @accomodation_user.like %>
+</p>
+
+<p>
+  <strong>Dislike:</strong>
+  <%= @accomodation_user.dislike %>
+</p>
+
+<%= link_to 'Edit', edit_accomodation_user_path(@accomodation_user) %> |
+<%= link_to 'Back', accomodation_users_path %>

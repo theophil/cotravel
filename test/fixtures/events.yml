@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  name: MyString
+  schedule_id: 
+  start_time: 2015-09-25 18:22:42
+  end_time: 2015-09-25 18:22:42
+  description: 2015-09-25 18:22:42
+  cost: 
+  longitude: MyString
+  location_name: MyString
+
+two:
+  id: 
+  name: MyString
+  schedule_id: 
+  start_time: 2015-09-25 18:22:42
+  end_time: 2015-09-25 18:22:42
+  description: 2015-09-25 18:22:42
+  cost: 
+  longitude: MyString
+  location_name: MyString

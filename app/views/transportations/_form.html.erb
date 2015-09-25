@@ -1,0 +1,45 @@
+<%= form_for(@transportation) do |f| %>
+  <% if @transportation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transportation.errors.count, "error") %> prohibited this transportation from being saved:</h2>
+
+      <ul>
+      <% @transportation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.text_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :is_final_plan %><br>
+    <%= f.check_box :is_final_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :like %><br>
+    <%= f.check_box :like %>
+  </div>
+  <div class="field">
+    <%= f.label :dislike %><br>
+    <%= f.check_box :dislike %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_location %><br>
+    <%= f.text_field :departure_location %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_location %><br>
+    <%= f.text_field :arrival_location %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

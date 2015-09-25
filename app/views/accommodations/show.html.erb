@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @accommodation.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @accommodation.name %>
+</p>
+
+<p>
+  <strong>Check in time:</strong>
+  <%= @accommodation.check_in_time %>
+</p>
+
+<p>
+  <strong>Check out time:</strong>
+  <%= @accommodation.check_out_time %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @accommodation.group_id %>
+</p>
+
+<p>
+  <strong>Is final plan:</strong>
+  <%= @accommodation.is_final_plan %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @accommodation.cost %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @accommodation.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @accommodation.latitude %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @accommodation.url %>
+</p>
+
+<%= link_to 'Edit', edit_accommodation_path(@accommodation) %> |
+<%= link_to 'Back', accommodations_path %>

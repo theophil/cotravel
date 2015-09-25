@@ -1,0 +1,43 @@
+<h1>Listing accommodations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Check in time</th>
+      <th>Check out time</th>
+      <th>Group</th>
+      <th>Is final plan</th>
+      <th>Cost</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accommodations.each do |accommodation| %>
+      <tr>
+        <td><%= accommodation.id %></td>
+        <td><%= accommodation.name %></td>
+        <td><%= accommodation.check_in_time %></td>
+        <td><%= accommodation.check_out_time %></td>
+        <td><%= accommodation.group_id %></td>
+        <td><%= accommodation.is_final_plan %></td>
+        <td><%= accommodation.cost %></td>
+        <td><%= accommodation.longitude %></td>
+        <td><%= accommodation.latitude %></td>
+        <td><%= accommodation.url %></td>
+        <td><%= link_to 'Show', accommodation %></td>
+        <td><%= link_to 'Edit', edit_accommodation_path(accommodation) %></td>
+        <td><%= link_to 'Destroy', accommodation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accommodation', new_accommodation_path %>

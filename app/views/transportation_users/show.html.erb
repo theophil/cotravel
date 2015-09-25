@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @transportation_user.user_id %>
+</p>
+
+<p>
+  <strong>Transporation:</strong>
+  <%= @transportation_user.transporation_id %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @transportation_user.like %>
+</p>
+
+<p>
+  <strong>Dislike:</strong>
+  <%= @transportation_user.dislike %>
+</p>
+
+<%= link_to 'Edit', edit_transportation_user_path(@transportation_user) %> |
+<%= link_to 'Back', transportation_users_path %>

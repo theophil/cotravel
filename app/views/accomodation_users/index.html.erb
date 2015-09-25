@@ -1,0 +1,31 @@
+<h1>Listing accomodation_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Accomodation</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accomodation_users.each do |accomodation_user| %>
+      <tr>
+        <td><%= accomodation_user.user_id %></td>
+        <td><%= accomodation_user.accomodation_id %></td>
+        <td><%= accomodation_user.like %></td>
+        <td><%= accomodation_user.dislike %></td>
+        <td><%= link_to 'Show', accomodation_user %></td>
+        <td><%= link_to 'Edit', edit_accomodation_user_path(accomodation_user) %></td>
+        <td><%= link_to 'Destroy', accomodation_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accomodation user', new_accomodation_user_path %>

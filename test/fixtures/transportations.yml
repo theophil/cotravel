@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_id: 
+  is_final_plan: false
+  like: false
+  dislike: false
+  departure_location: MyString
+  arrival_location: MyString
+  description: MyText
+
+two:
+  group_id: 
+  is_final_plan: false
+  like: false
+  dislike: false
+  departure_location: MyString
+  arrival_location: MyString
+  description: MyText

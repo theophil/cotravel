@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @transportation.group_id %>
+</p>
+
+<p>
+  <strong>Is final plan:</strong>
+  <%= @transportation.is_final_plan %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @transportation.like %>
+</p>
+
+<p>
+  <strong>Dislike:</strong>
+  <%= @transportation.dislike %>
+</p>
+
+<p>
+  <strong>Departure location:</strong>
+  <%= @transportation.departure_location %>
+</p>
+
+<p>
+  <strong>Arrival location:</strong>
+  <%= @transportation.arrival_location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @transportation.description %>
+</p>
+
+<%= link_to 'Edit', edit_transportation_path(@transportation) %> |
+<%= link_to 'Back', transportations_path %>

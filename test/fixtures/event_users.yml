@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 
+  user_id: 
+  like: false
+  dislike: false
+
+two:
+  event_id: 
+  user_id: 
+  like: false
+  dislike: false

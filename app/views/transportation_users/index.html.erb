@@ -1,0 +1,31 @@
+<h1>Listing transportation_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Transporation</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transportation_users.each do |transportation_user| %>
+      <tr>
+        <td><%= transportation_user.user_id %></td>
+        <td><%= transportation_user.transporation_id %></td>
+        <td><%= transportation_user.like %></td>
+        <td><%= transportation_user.dislike %></td>
+        <td><%= link_to 'Show', transportation_user %></td>
+        <td><%= link_to 'Edit', edit_transportation_user_path(transportation_user) %></td>
+        <td><%= link_to 'Destroy', transportation_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transportation user', new_transportation_user_path %>

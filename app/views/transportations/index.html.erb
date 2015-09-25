@@ -1,0 +1,37 @@
+<h1>Listing transportations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Is final plan</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th>Departure location</th>
+      <th>Arrival location</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transportations.each do |transportation| %>
+      <tr>
+        <td><%= transportation.group_id %></td>
+        <td><%= transportation.is_final_plan %></td>
+        <td><%= transportation.like %></td>
+        <td><%= transportation.dislike %></td>
+        <td><%= transportation.departure_location %></td>
+        <td><%= transportation.arrival_location %></td>
+        <td><%= transportation.description %></td>
+        <td><%= link_to 'Show', transportation %></td>
+        <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
+        <td><%= link_to 'Destroy', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transportation', new_transportation_path %>
