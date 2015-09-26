@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Name</th>
       <th>Check in time</th>
       <th>Check out time</th>
@@ -20,7 +19,6 @@
   <tbody>
     <% @accommodations.each do |accommodation| %>
       <tr>
-        <td><%= accommodation.id %></td>
         <td><%= accommodation.name %></td>
         <td><%= accommodation.check_in_time %></td>
         <td><%= accommodation.check_out_time %></td>

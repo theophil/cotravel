@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br>
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -29,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :group_id %><br>
-    <%= f.text_field :group_id %>
+    <%= f.number_field :group_id %>
   </div>
   <div class="field">
     <%= f.label :is_final_plan %><br>
@@ -37,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+    <%= f.number_field :cost %>
   </div>
   <div class="field">
     <%= f.label :longitude %><br>

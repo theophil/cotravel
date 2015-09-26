@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 
   name: MyString
-  group_admin_id: 
+  group_admin_id: 1
 
 two:
-  id: 
   name: MyString
-  group_admin_id: 
+  group_admin_id: 1

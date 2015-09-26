@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br>
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :schedule_id %><br>
-    <%= f.text_field :schedule_id %>
+    <%= f.number_field :schedule_id %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
@@ -37,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+    <%= f.number_field :cost %>
   </div>
   <div class="field">
     <%= f.label :longitude %><br>
