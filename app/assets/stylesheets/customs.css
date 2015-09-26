@@ -30,3 +30,8 @@
     text-align: left;
     margin-top: 20px;
  }
+
+ .carousel-caption{
+    font-size: 25px;
+    font-style: italic;
+ }
