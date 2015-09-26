@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { registrations: 'registrations' } do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+
+  resources :users
+
   resources :schedules
 
   resources :event_users
@@ -16,6 +24,8 @@ Rails.application.routes.draw do
   resources :transportations
 
   resources :groups
+
+  root to: "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
