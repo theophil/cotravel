@@ -31,7 +31,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'simple_form'
 
 
-gem 'fullcalendar-rails'
+# gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 # Devise
