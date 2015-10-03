@@ -1,0 +1,48 @@
+<script>
+
+$( document ).ready(function() {
+    $('#calendar').fullCalendar({
+        header: {
+                right: 'prev,next'
+            },
+        defaultView: "agendaDay" ,
+        events: "/schedules/get_events.json"
+    });
+});
+
+
+window.setInterval(function() {
+    $.ajax({
+            url: "/schedules/update_calendar", // Route to the Script Controller method
+            type: "GET",
+            dataType: "json",
+            data: { test: $("#test").val() }, // This goes to Controller in params hash, i.e. params[:file_name]
+            complete: function() {},
+            success: function(data, textStatus, xhr) {
+                        
+                        // $("#proposed_events").append(data.test)
+                        // $("#proposed_events").append("<br>")
+                        $("#calendar_div").html(data.html);
+                        console.log("success");
+                        // Do something with the response here
+                        // editor.setValue(data.file_content) // Show the file contents in our editor.
+                                                           // editor is defined somewhere above 
+                                                           // 'file_content' is the key we use to respond
+                                                           // in the controller function below
+                      },
+            error: function() {
+                        console.log("Ajax error!");
+            }
+    });
+    return false;
+
+}, 100000);
+
+
+
+
+</script>
+
+
+
+<div id="calendar"></div>

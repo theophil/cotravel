@@ -5,6 +5,11 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @schedules = Schedule.all
+    @test = "Testing Testing"
+
+
+    # doesn't have the params
+    @event = Event.new
   end
 
   # GET /schedules/1
@@ -20,6 +25,8 @@ class SchedulesController < ApplicationController
   # GET /schedules/1/edit
   def edit
   end
+
+
 
   # POST /schedules
   # POST /schedules.json
@@ -61,6 +68,36 @@ class SchedulesController < ApplicationController
     end
   end
 
+
+  def update_calendar
+    # not even close to being complete
+    # need to query the events for the appropriate user and correct date
+
+    respond_to do |format|
+      format.json {render :json => {success: true, html: render_to_string(:partial => 'schedules/calendar.html')}}
+    end
+
+    # puts(params[:test])
+
+    # render :json => { :test => "Now You See Me"}
+
+
+  end
+
+  def get_events
+    events = Event.all
+    event_result = []
+
+    for event in events
+      new_entry = {}
+      new_entry["start"] = event.start_time
+      new_entry["end"] = event.end_time
+      event_result.append(new_entry)
+    end
+    render :json => event_result
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
@@ -70,5 +107,9 @@ class SchedulesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
       params.require(:schedule).permit(:group_id, :date)
+    end
+
+    def event_params
+      params.require(:event).permit(:name, :schedule_id, :start_time, :end_time, :description, :cost, :longitude, :location_name)
     end
 end
