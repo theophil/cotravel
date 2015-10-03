@@ -1,0 +1,28 @@
+  <head>
+    <style type="text/css">
+      #map { width:100%; height:500px;}
+    </style>
+  </head>
+
+</script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx-HL4cf_QdEK7ZjHfrEAaQ2kpC1KYz38&callback=initMap">
+</script>
+
+
+<script type = "text/javascript">
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+  console.log("created map")
+}
+
+</script>
+
+Google Map
+
+<div id="map"></div>
