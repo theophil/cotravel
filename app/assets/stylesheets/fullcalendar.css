@@ -682,7 +682,11 @@ a.fc-more:hover {
 }
 
 .fc-toolbar .fc-left {
-
+	/* Day 1: */
+	font-family: FiraSans-Light;
+	font-size: 24px;
+	color: #222B2F;
+	line-height: 28px;
 	float: left;
 }
 
