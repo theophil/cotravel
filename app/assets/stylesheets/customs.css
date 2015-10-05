@@ -7,13 +7,20 @@
     text-align: center;
 }
 
-.navbar-lower li a{
-    background: #2C353A;
+.navbar-lower li a:hover{
+    background: #000;
+    background-color:#000; 
 }
+
 .navbar-lower li.active a {
     background-color:#000; 
 }
+
 .navbar-lower li.active {
+    background-color:#000; 
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
     background-color:#000; 
 }
 
@@ -26,6 +33,10 @@
 
 body{
   padding-top: 50px;
+}
+
+.body{
+    margin-top: -40px;
 }
 
 /*flash*/
@@ -74,6 +85,7 @@ body{
     padding-left: 40px;
     padding-bottom: 30px;
     padding-top: 30px;
+    margin-top: -32px;
 }
 
 /* Your next upcoming: */
@@ -89,7 +101,7 @@ line-height: 29px;
 font-family: FiraSans-Medium;
 font-size: 36px;
 color: #FFFFFF;
-line-height: 53px;
+line-height: 30px;
 }
 
 #banner-bottom{
@@ -97,7 +109,7 @@ line-height: 53px;
 font-family: FiraSans-Book;
 font-size: 24px;
 color: #FFFFFF;
-line-height: 28px;
+line-height: 30px;
 }
 
 #banner-date{
@@ -105,7 +117,7 @@ line-height: 28px;
 font-family: FiraSans-Book;
 font-size: 24px;
 color: #FFFFFF;
-line-height: 28px;
+line-height: 30px;
 }
 
 .calendar{
