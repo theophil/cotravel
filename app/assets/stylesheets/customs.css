@@ -1,9 +1,17 @@
+/*body {
+  overflow-y:hidden;
+}*/
+
+body{
+  padding-top: 50px;
+}
+
  /*Navbar*/
  .navbar-brand
 {
     margin: auto;
     position: absolute;
-    padding-left: 31%;
+    padding-left: 35%;
     text-align: center;
 }
 
@@ -25,19 +33,12 @@
 }
 
 .navbar-lower li {
-    font-weight: bold;
+    font-weight: light;
     text-align: center;
     color:#fff;
     background-color:#2C353A; 
 }
 
-body{
-  padding-top: 50px;
-}
-
-.body{
-    margin-top: -40px;
-}
 
 /*flash*/
 .alert-error {
@@ -89,12 +90,13 @@ body{
 }
 
 /* Your next upcoming: */
-#banner-top{
+/*#banner-top{
 font-family: FiraSans-MediumItalic;
-font-size: 20px;
+font-size: 18px;
 color: #FFFFFF;
-line-height: 29px;
-}
+line-height: 15px;
+margin-top: 10px;
+}*/
 
 /* Fall Getaway: */
 #banner-mid{
@@ -102,24 +104,59 @@ font-family: FiraSans-Medium;
 font-size: 36px;
 color: #FFFFFF;
 line-height: 30px;
+margin-top: 10px;
 }
 
-#banner-bottom{
+#banner-bottom, #banner-date{
 /* Boston, MA: */
-font-family: FiraSans-Book;
-font-size: 24px;
+font-family: FiraSans-Light;
+font-size: 22px;
 color: #FFFFFF;
-line-height: 30px;
+line-height: 22px;
 }
 
-#banner-date{
-/* Fri, Oct 23 2015 - S: */
-font-family: FiraSans-Book;
-font-size: 24px;
-color: #FFFFFF;
-line-height: 30px;
+
+/*Everything under nav and banner*/
+.body{
+    margin-top: -40px;
 }
 
 .calendar{
     padding-top: 40px;
 }
+
+#proposed_events{
+    position:absolute; top:35.5%; bottom:-100%; right:10.4%;
+    width:19%;
+    background-color:#EDF1F2; 
+}
+
+/* Other Proposed Event: */
+#title{
+font-family: FiraSans-Light;
+font-size: 16px;
+color: #4D4D50;
+line-height: 19px;
+padding-top: 80px;
+}
+
+/* Alternative 1: */
+#e-name{
+font-family: HelveticaNeue-CondensedBold;
+font-size: 15.57px;
+color: #38A6A6;
+line-height: 20px;
+margin-bottom:2px;
+}
+
+/* 20: */
+#e-cost, #e-time, #e-location{
+font-family: AvenirNextCondensed-Regular;
+font-size: 12px;
+color: #4D4D50;
+line-height: 20px;
+vertical-align: bottom;
+}
+
+
+

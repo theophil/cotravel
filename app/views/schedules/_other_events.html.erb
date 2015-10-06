@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-11">
+		<p id="title">Other Proposed Events</p>
+			<!-- TODO: added @other_events in controller -->
+			<%# for @other_events.each do |e| %>
+			<% Event.all.each do |e| %>
+	      <tr>
+	        <div class="col-md-1">
+	        	<tr><%= link_to(image_tag("icons/like.png",:size =>"17")) %>
+	        	<tr><%= link_to(image_tag("icons/dislike.png",:size =>"17")) %>
+	        </div>
+
+	        <div class="col-md-10">
+
+			      <td ><p id="e-name"><%= e.name %></p></td>
+				    <td ><%= image_tag("icons/cost.png",:size =>"12")%>&nbsp;<span id="e-cost"><%= e.cost %></span></td><br/>
+
+				    <td ><%= image_tag("icons/time.png",:size =>"12") %>&nbsp;<span id="e-time"><%= e.start_time.strftime('%l:%M') %> - <%= e.end_time.strftime('%l:%M %p') %></td>
+
+		        <td ><p id="e-location"><%= image_tag("icons/location.png",:size =>"11x15") %>&nbsp;&nbsp;&nbsp;<%= e.location_name %></td>
+
+		        <td><br/>&nbsp;</td> <!-- style fix -->
+	        </div>
+	      </tr>
+			<% end %>
+
+  </div>
+</div>
