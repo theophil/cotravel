@@ -4,7 +4,6 @@ class CreateEventUsers < ActiveRecord::Migration
       t.integer :event_id
       t.integer :user_id
       t.boolean :like
-      t.boolean :dislike
 
       t.timestamps
     end

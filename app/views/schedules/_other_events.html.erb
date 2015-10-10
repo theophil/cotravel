@@ -2,13 +2,13 @@
   <div class="col-md-1"></div>
   <div class="col-md-11">
 		<p id="title">Other Proposed Events</p>
-			<!-- TODO: added @other_events in controller -->
+			<!-- TODO: added @other_events in schedule controller -->
 			<%# for @other_events.each do |e| %>
-			<% Event.all.each do |e| %>
+			<% Event.all.sort_by{|events| events.thumbs_up_total}.reverse.each do |e| %>
 	      <tr>
 	        <div class="col-md-1">
-	        	<tr><%= link_to(image_tag("icons/like.png",:size =>"17")) %>
-	        	<tr><%= link_to(image_tag("icons/dislike.png",:size =>"17")) %>
+	        	<tr><%= link_to(image_tag("icons/like.png",:size =>"17"), event_users_event_path(e, like: true), method: :post) %>&nbsp;&nbsp;<%= e.thumbs_up_total %>
+	        	<tr><%= link_to(image_tag("icons/dislike.png",:size =>"17"), event_users_event_path(e, like: false), method: :post) %>&nbsp;&nbsp;<%= e.thumbs_down_total %>
 	        </div>
 
 	        <div class="col-md-10">

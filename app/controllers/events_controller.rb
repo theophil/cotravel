@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.sort_by{|events| events.thumbs_up_total}.reverse
   end
 
   # GET /events/1
@@ -59,6 +59,12 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def event_users
+    @event = Event.find(params[:id])
+    EventUser.create(like: params[:like], user_id: current_user.id, event_id: @event.id)
+    redirect_to :back
   end
 
   private

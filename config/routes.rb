@@ -14,9 +14,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :event_users
+  resources :event_users 
 
-  resources :events
+  resources :events do
+    member do
+      post 'event_users'
+    end
+  end
 
   resources :accomodation_users
 
