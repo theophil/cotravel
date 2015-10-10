@@ -92,6 +92,9 @@ class SchedulesController < ApplicationController
       new_entry = {}
       new_entry["start"] = event.start_time
       new_entry["end"] = event.end_time
+      new_entry["title"] = event.name
+      new_entry['latitude'] = event.latitude
+      new_entry['longitude'] = event.longitude
       event_result.append(new_entry)
     end
     render :json => event_result

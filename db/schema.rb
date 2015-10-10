@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150926190121) do
     t.datetime "description"
     t.integer  "cost"
     t.string   "longitude"
+    t.string   "latitude"
     t.string   "location_name"
     t.datetime "created_at"
     t.datetime "updated_at"

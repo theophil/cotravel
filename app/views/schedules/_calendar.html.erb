@@ -6,7 +6,8 @@ $( document ).ready(function() {
                 right: 'prev,next'
             },
         defaultView: "agendaDay" ,
-        events: "/schedules/get_events.json"
+        events: "/schedules/get_events.json",
+        allDaySlot: false
     });
     return false;
 });

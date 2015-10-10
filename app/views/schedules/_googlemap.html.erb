@@ -4,11 +4,9 @@
     </style>
   </head>
 
-</script>
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx-HL4cf_QdEK7ZjHfrEAaQ2kpC1KYz38&callback=initMap">
-</script>
-
+      src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBx-HL4cf_QdEK7ZjHfrEAaQ2kpC1KYz38&libraries=places&callback=initMap">
+    </script>
 
 <script type = "text/javascript">
 
@@ -18,11 +16,37 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 8
   });
-  console.log("created map")
+  console.log("created map");
+  console.log("testing load order")
+  $("#event_location_name").geocomplete({
+    details: ".geocoding_data"
+  }).bind("geocode:result", function (event, result) {            
+    $("#event_latitude").val(result.geometry.location.lat());
+    $("#event_longitude").val(result.geometry.location.lng());
+  });
+
+  // var image = "<%= image_tag('icons/man.png') %>"
+
+  $.getJSON("/schedules/get_events.json", function(data){
+    if (data.length > 0){
+      map.setCenter({lat:parseFloat(data[0].latitude),lng:parseFloat(data[0].longitude)});
+    }
+    
+    $.each( data, function( key, val ) {
+      var beachMarker = new google.maps.Marker({
+        position: {lat: parseFloat(val.latitude), lng: parseFloat(val.longitude)},
+        map: map,
+        // icon: image
+      });
+      console.log("created one marker");
+    });
+
+  });
+
+  //markers haha
 }
 
 </script>
-
 
 
 <div id="map"></div>
