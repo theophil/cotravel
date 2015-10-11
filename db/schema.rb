@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20150926190121) do
     t.integer  "event_id"
     t.integer  "user_id"
     t.boolean  "like"
-    t.boolean  "dislike"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
