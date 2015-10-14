@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :event_users
   has_many :events, through: :event_users
 
+  scope :alphabetical, -> {order("last_name","first_name")}
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

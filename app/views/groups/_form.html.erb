@@ -1,4 +1,4 @@
-<%= form_for(@group) do |f| %>
+<%= simple_form_for(@group, html: { class: 'form-horizontal' }) do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -16,8 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :group_admin_id %><br>
-    <%= f.number_field :group_admin_id %>
+    <%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
   </div>
   <div class="actions">
     <%= f.submit %>
