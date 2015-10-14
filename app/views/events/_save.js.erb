@@ -1,0 +1,12 @@
+// $("ul.errors").html("")
+console.log("here");
+<% if @event.errors.any? %>
+	console.log("yes");
+  <% @event.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+	console.log("no");
+  // $(".event-index").html("<%= escape_javascript(render 'index') %>")
+  $("#event-modal").modal("hide")
+<% end %>
