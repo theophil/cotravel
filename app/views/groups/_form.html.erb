@@ -4,9 +4,9 @@
     <%= render :partial => "group_fields", :locals => { :f => group_form } %>
   
 
-    <%= group_form.simple_fields_for :user do |user_form| %>
-            <%= render :partial => "user_fields", :locals => { :f => user_form } %>
-          <% end %> 
+    <!--<%# group_form.simple_fields_for :user do |user_form| %>
+            <%# render :partial => "user_fields", :locals => { :f => user_form } %>
+          <%# end %>-->
 
     <div class="form-actions">
       <%= group_form.submit nil, class: 'button radius' %>
