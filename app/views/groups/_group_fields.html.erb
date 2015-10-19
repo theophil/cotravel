@@ -1,0 +1,7 @@
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
+  </div>
