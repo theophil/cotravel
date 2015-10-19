@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @user.group = Group.to_a[rand(1..3)]
+    #@user.group = Group.to_a[rand(1..3)] #hack until can figure how to add user to group
   end
 
   # GET /users/1/edit
