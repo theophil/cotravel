@@ -1,9 +1,6 @@
-  <%= simple_form_for @group, html: { class: 'form-horizontal' } do |f| %>
-	  <div class="field">
-	    <%= f.label :name %><br>
-	    <%= f.text_field :name %>
-	  </div>
-	  <div class="field">
-	    <%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
-	  </div>
-  <%end%>
+<%= simple_form_for @group, html: { class: 'form-horizontal' } do |f| %>
+	<%= f.input :name, placeholder: 'Name'%>
+
+	<%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
+
+<%end%>
