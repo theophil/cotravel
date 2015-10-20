@@ -9,6 +9,7 @@
         <%= f.input :end_time, minute_step: 15, label: "End Time" %>
         <%= f.input :cost, label: "Cost" %>
         <%= f.input :location_name, label: "Location" %>
+        <%= f.hidden_field :schedule_id, :value => Schedule.last.id %>
         <%= f.hidden_field :longitude, :value => 0, label: "Longitude", id: "event_location_name"%></input>
         <%= f.hidden_field :latitude, :value => 0, label: "Latitude" %>
       </div>

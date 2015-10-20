@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.last
     @test = "Testing Testing"
 
 
@@ -85,7 +85,10 @@ class SchedulesController < ApplicationController
   end
 
   def get_events
-    events = current_user.events #or write method #WAS Event.all
+    @schedule = Schedule.last
+    events = @schedule.events
+    # events = Event.all
+    # events = current_user.events #or write method #WAS Event.all
     event_result = []
 
     for event in events
