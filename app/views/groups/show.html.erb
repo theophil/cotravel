@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Group admin:</strong>
+  <strong>Group Admin:</strong>
   <%= @group.group_admin_id %>
+</p>
+
+<p>
+  <strong>User(s):</strong>
+  <%= @group.group_users.map { |gu| gu.user_id } %>
 </p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

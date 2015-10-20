@@ -4,4 +4,8 @@ class Group < ActiveRecord::Base
  has_many :accomodations
  has_many :transportations
  has_many :schedules
+
+ accepts_nested_attributes_for :users, reject_if: lambda { |user| user[:first_name].blank? }
+
+ scope :alphabetical, -> {order("name")}
 end
