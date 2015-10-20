@@ -1,25 +1,14 @@
-<%= form_for(@schedule) do |f| %>
-  <% if @schedule.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+<%= simple_form_for(@schedule, :html => {:class => 'form-inline' }) do |f| %>
+  <div >
+    <%= f.input :location , :label => 'Location'%>&nbsp;
+    <%= f.input :start_date, as: :date, :label => 'Start Date'%>
+    <%= f.input :end_date, as: :date, :label => 'End Date'%>
+    <%= f.input :group_id, collection: Group.all, :label => 'Group'%>
 
-      <ul>
-      <% @schedule.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :group_id %><br>
-    <%= f.number_field :group_id %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
+
 <% end %>

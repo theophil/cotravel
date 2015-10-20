@@ -8,4 +8,6 @@ class Group < ActiveRecord::Base
  accepts_nested_attributes_for :users, reject_if: lambda { |user| user[:first_name].blank? }
 
  scope :alphabetical, -> {order("name")}
+ # scope :schedule, -> (self.id) { joins(:schedules).where('group_id = ?', self.id) }
+ 
 end

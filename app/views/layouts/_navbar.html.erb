@@ -22,8 +22,8 @@
   <nav class="navbar navbar-inverse navbar-lower">
       <ul class="nav nav-pills nav-justified ">
         <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to image_tag("icons/dash.png", :size =>"40"), root_path %>Dashboard</li>
-        <li class="<%= 'active' if current_page?(transportations_path) %>"><%= link_to image_tag("icons/trans.png", :size =>"40"), transportations_path %>Transportation</li>
-        <li class="<%= 'active' if current_page?(accommodations_path) %>"><%= link_to image_tag("icons/accom.png", :size =>"40"), accommodations_path  %>Accommodation</li>
+        <li class="<%= 'active' if current_page?(transportations_path) %>"><%= link_to image_tag("icons/trans.png", :size =>"40") %>Transportation</li>
+        <li class="<%= 'active' if current_page?(accommodations_path) %>"><%= link_to image_tag("icons/accom.png", :size =>"40")  %>Accommodation</li>
         <li class="<%= 'active' if current_page?(schedules_path) %>"><%= link_to image_tag("icons/schedule.png", :size =>"40"), schedules_path  %>Schedule</li>
         <li class="<%= 'active' if current_page?(groups_path) %>"><%= link_to image_tag("icons/group.png",:size =>"40"), groups_path %>Groups</li>
       </ul>

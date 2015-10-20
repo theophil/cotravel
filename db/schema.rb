@@ -74,7 +74,9 @@ ActiveRecord::Schema.define(version: 20150926190121) do
 
   create_table "schedules", force: true do |t|
     t.integer  "group_id"
-    t.datetime "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

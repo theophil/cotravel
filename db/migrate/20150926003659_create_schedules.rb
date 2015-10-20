@@ -2,7 +2,9 @@ class CreateSchedules < ActiveRecord::Migration
   def change
     create_table :schedules do |t|
       t.integer :group_id
-      t.datetime :date
+      t.datetime :start_date
+      t.datetime :end_date
+      t.string		:location
 
       t.timestamps
     end

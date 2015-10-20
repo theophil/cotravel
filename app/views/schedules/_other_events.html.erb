@@ -1,9 +1,7 @@
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-11">
-  	<%= link_to "New Event", new_event_path, remote: true %>
-
-		<p id="title">Other Proposed Events</p>
+		<p id="title">Other Proposed Events<span id="new-event">&nbsp;&nbsp;<%= link_to(image_tag("icons/add.png",:size =>"17"),new_event_path, remote: true) %></span></p>
 			<!-- TODO: added @other_events in schedule controller -->
 			<%# for @other_events.each do |e| %>
 			<% Event.all.sort_by{|events| events.thumbs_up_total}.reverse.each do |e| %>
@@ -26,6 +24,6 @@
 	        </div>
 	      </tr>
 			<% end %>
-
+		</div>
   </div>
 </div>

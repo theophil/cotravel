@@ -1,6 +1,12 @@
-<%= simple_form_for @group, html: { class: 'form-horizontal' } do |f| %>
-	<%= f.input :name, placeholder: 'Name'%>
 
-	<%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
 
-<%end%>
+	<%= simple_form_for @group, html: { class: 'form-horizontal' } do |f| %>
+		<%= f.input :name, placeholder: 'Name'%>
+
+		<%= f.input :group_admin_id, collection: User.alphabetical.all, prompt: "Select Group Administrator..." %>
+
+		<div>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+     </div>
+	<%end%>

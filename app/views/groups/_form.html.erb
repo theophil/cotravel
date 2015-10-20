@@ -1,17 +1,11 @@
 <%= simple_nested_form_for(@group, html: { class: 'form-horizontal' }) do |group_form| %>
    
-  <div>
    <h3><%= controller.action_name.capitalize %> Group</h3>
     <%= render :partial => "group_fields", :locals => { :f => group_form } %>
+  
 
     <!--<%# group_form.simple_fields_for :user do |user_form| %>
             <%# render :partial => "user_fields", :locals => { :f => user_form } %>
           <%# end %>-->
-  </div>
-  
-  <div class="form-actions">
-    <%= group_form.submit %>
-    <%= link_to 'Back to list of groups', groups_path, :class => 'button secondary radius' %>
-  </div>
 
 <% end %>

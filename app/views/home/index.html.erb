@@ -1,12 +1,25 @@
 <div class="container">
-<div id="mycarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="item active">
-        	<%= image_tag "home.jpeg" %>
-        		<!-- <img src="/images/home.jpeg" alt="" class="img-responsive">  -->
-           <div class="carousel-caption">Don't let the pain of organizing your vacation ruin your day
-           </div>
-        </div>
-    </div>
-</div>
+	<% if user_signed_in? %>
+		
+	  <div class="jumbotron">
+	    <h1>Plan it, Track it and Love it </h1>      
+	     
+	    <button type="button" class="btn btn-default"><%= link_to 'New Schedule', new_schedule_path %></button>   
+	    <button type="button" class="btn btn-default"><%= link_to 'New Group', new_group_path %></button>   
+	    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
+
+
+	  </div>
+	<% else %>
+		<div id="mycarousel" class="carousel slide" data-ride="carousel">
+		    <div class="carousel-inner">
+		        <div class="item active">
+		        	<%= image_tag "home.jpeg" %>
+		        		<!-- <img src="/images/home.jpeg" alt="" class="img-responsive">  -->
+		           <div class="carousel-caption">Don't let the pain of organizing your vacation ruin your day
+		           </div>
+		        </div>
+		    </div>
+		</div>
+	<%end%>
 </div>

@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :user_id, collection: User.alphabetical.all, prompt: "Select Group..." %>
+    <%= f.input :user_id, collection: User.alphabetical.all prompt: "Select Group..." %>
   </div>
   <div class="field">
     <%= f.input :group_id, collection: Group.alphabetical.all, prompt: "Select Group..." %>
