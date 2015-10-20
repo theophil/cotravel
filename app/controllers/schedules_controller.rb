@@ -85,7 +85,7 @@ class SchedulesController < ApplicationController
   end
 
   def get_events
-    events = Event.all
+    events = current_user.events #or write method #WAS Event.all
     event_result = []
 
     for event in events
