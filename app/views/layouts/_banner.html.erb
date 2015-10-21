@@ -3,10 +3,10 @@
 	<p id="banner-mid">Fall Getaway<%#=@schedule.name%></p> <!-- TODO: added name to schedule model -->
 	<div class="row">
 		<div class="col-md-3">
-			<p id="banner-bottom"><%= Schedule.last.location %></p><!-- TODO: added location to schedule model -->
+			<p id="banner-bottom"><%=  Schedule.all.empty? ? "" : Schedule.last.location %></p><!-- TODO: added location to schedule model -->
 		</div>
 		<div class="col-md-5">
-			<span><p id="banner-date"><%= Schedule.last.start_date.strftime('%d, %b ')%> - <%= Schedule.last.end_date.strftime('%d, %b %Y') %></p></span><!-- TODO: added start_date, end_date to schedule model -->
+			<span><p id="banner-date"><%= Schedule.all.empty? ? "" : "#{Schedule.last.start_date.strftime('%d, %b ')} - #{Schedule.last.end_date.strftime('%d, %b %Y')}" %></p></span><!-- TODO: added start_date, end_date to schedule model -->
 		</div>
 	</div>
 </div>
