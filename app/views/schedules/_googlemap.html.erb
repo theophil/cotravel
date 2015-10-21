@@ -1,6 +1,12 @@
   <head>
     <style type="text/css">
       #map { width:100%; height:500px;}
+      .ui-autocomplete {
+        z-index: 1051 !important;
+      }
+      .pac-container {
+        z-index: 1051 !important;
+      }
     </style>
   </head>
 
@@ -46,7 +52,24 @@ function initMap() {
   //markers haha
 }
 
+
+$(window).on('shown.bs.modal', function() { 
+    //$('#modal-content').modal('show');
+    console.log("ha");
+    $("#event_location_name").geocomplete({
+      details: ".geocoding_data"
+    }).bind("geocode:result", function (event, result) {            
+      $("#event_latitude").val(result.geometry.location.lat());
+      $("#event_longitude").val(result.geometry.location.lng());
+  });
+});
+
+
 </script>
+
+
+
+
 
 
 <div id="map"></div>

@@ -1,4 +1,12 @@
-<div class="modal-dialog">
+<script type = "text/javascript">
+$('#new_event').on('submit', function() {
+  console.log("hey");
+  $('.event-modal').modal('hide');
+  document.location.reload();
+});
+</script>
+
+<div class="modal-dialog" id = "modal-div">
   <div class="modal-content">
     <%= simple_form_for @event, remote: true do |f| %>
       <div class="modal-body">
@@ -10,7 +18,7 @@
         <%= f.input :cost, label: "Cost" %>
         <%= f.input :location_name, label: "Location" %>
         <%= f.hidden_field :schedule_id, :value => Schedule.last.id %>
-        <%= f.hidden_field :longitude, :value => 0, label: "Longitude", id: "event_location_name"%></input>
+        <%= f.hidden_field :longitude, :value => 0, label: "Longitude"%></input>
         <%= f.hidden_field :latitude, :value => 0, label: "Latitude" %>
       </div>
       
@@ -23,3 +31,7 @@
     <% end %>
   </div>
 </div>
+
+
+
+
