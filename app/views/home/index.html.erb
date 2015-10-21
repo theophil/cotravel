@@ -1,13 +1,16 @@
 <div class="container">
 	<% if user_signed_in? %>
 		
-	  <div class="jumbotron">
-	    <h1>Plan it, Track it, and Love it </h1>      
-	     
-	    <button type="button" class="btn btn-default"><%= link_to 'New Schedule', new_schedule_path %></button>   
-	    <button type="button" class="btn btn-default"><%= link_to 'New Group', new_group_path %></button>   
-	    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
-	  </div>
+		<% if Event.all.empty? %>
+		  <div class="jumbotron">
+		    <h1>Plan it, Track it, and Love it </h1>      
+		     
+		    <button type="button" class="btn btn-default"><%= link_to 'New Schedule', new_schedule_path %></button>   
+		    <button type="button" class="btn btn-default"><%= link_to 'New Group', new_group_path %></button>   
+		    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
+		  </div>
+
+		<% else %>
 	   <div class="col-md-6" id = "calendar_div"><%= render 'schedules/calendar' %></div>
 	   <!--start groups table-->
 	   <div class="col-md-6">
@@ -17,7 +20,7 @@
 		    <!--<th></th>-->
 		  </tr>
 
-		<% @groups.each do |group| %>
+		<% @groups.empty? ? "" : @groups.each do |group| %>
 		  <tr>
 		    <td align="center"><%= link_to group.name, group_path(group) %></td>
 		    <!--<td><%# link_to 'Edit', edit_group_path(group), class: "button tiny radius" %></td>-->
@@ -25,6 +28,7 @@
 		<%end%>
 		</table></div>
 		<!--end groups table-->
+		<% end%>
 	<% else %>
 		<div id="mycarousel" class="carousel slide" data-ride="carousel">
 		    <div class="carousel-inner">

@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 	def index
-	  @groups = current_user.groups
+		if user_signed_in?
+	 	 	@groups = current_user.groups
+	 	end
 	end
 end
