@@ -1,44 +1,31 @@
-<div class="container">
-	<% if user_signed_in? %>
-		
-		<% if Event.all.empty? %>
+  <% if user_signed_in? && !current_user.groups.empty? %>
+	  <div class="row">
+	    <div class="container">
+	      <div class="col-md-3" ><%= render 'left' %></div>
+	      <div class="col-md-6" ><%= render 'schedules' %></div>
+	      <div class="col-md-3 " id="home-right"><%= render 'right' %></div>
+	    </div>
+	  </div>
+  <% elsif user_signed_in? && current_user.groups.empty? %>
+	    <div class="container">
 		  <div class="jumbotron">
-		    <h1>Plan it, Track it, and Love it </h1>      
-		     
-		    <button type="button" class="btn btn-default"><%= link_to 'New Schedule', new_schedule_path %></button>   
-		    <button type="button" class="btn btn-default"><%= link_to 'New Group', new_group_path %></button>   
-		    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
+	    <h1 id="home-title">Plan it, Track it  &nbsp;&amp;&nbsp;Love it<h1>
+	    <h1 id="home-title">	</h1>   	
+	    <div class="main-container">   
+	   		<div class="fixer-container">	     
+		    <button type="button" class="btn btn-default"><%= link_to 'Start Planning a Trip', new_schedule_path %></button>    
 		  </div>
-
-		<% else %>
-	   <div class="col-md-6" id = "calendar_div"><%= render 'schedules/calendar' %></div>
-	   <!--start groups table-->
-	   <div class="col-md-6">
-		<table class="table">
-		  <tr>
-		    <th align="center">Groups</th>
-		    <!--<th></th>-->
-		  </tr>
-
-		<% @groups.empty? ? "" : @groups.each do |group| %>
-		  <tr>
-		    <td align="center"><%= link_to group.name, group_path(group) %></td>
-		    <!--<td><%# link_to 'Edit', edit_group_path(group), class: "button tiny radius" %></td>-->
-		  </tr>
-		<%end%>
-		</table></div>
-		<!--end groups table-->
-		<% end%>
 	<% else %>
-		<div id="mycarousel" class="carousel slide" data-ride="carousel">
-		    <div class="carousel-inner">
-		        <div class="item active">
-		        	<%= image_tag "home.jpeg" %>
-		        		<!-- <img src="/images/home.jpeg" alt="" class="img-responsive">  -->
-		           <div class="carousel-caption">Don't let the pain of organizing your vacation ruin your day
-		           </div>
-		        </div>
-		    </div>
+		  <div class="row">
+	    <div class="container">
+		  <div class="jumbotron">
+	    <h1 id="home-title">Plan it, Track it  &nbsp;&amp;&nbsp;Love it<h1>
+	    <h1 id="home-title">	</h1>   	
+	    <div class="main-container">   
+	   		<div class="fixer-container">	     
+		    <button type="button" class="btn btn-default"><%= link_to 'Start Planning a Trip', new_user_session_path %></button>    
+		  </div>
 		</div>
+
 	<%end%>
-</div>
+

@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150926190121) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string   "location"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

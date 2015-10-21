@@ -1,0 +1,12 @@
+		<%= render 'schedules/calendar' %>
+
+		<% if user_signed_in? && current_user.groups.empty? %>
+			<div class="jumbotron">
+	    <h1 id="home-title">Plan it&nbsp;&nbsp;&nbsp;Track it  &nbsp;&nbsp;&amp;&nbsp;&nbsp;Love it</h1>   
+	  <div class="main-container">   
+	   <div class="fixer-container">
+		    <button type="button" class="btn btn-default"><%= link_to 'New Schedule', new_schedule_path %></button>   
+		    <button type="button" class="btn btn-default"><%= link_to 'New Group', new_group_path %></button>   
+		    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
+		  </div>
+		 <%end%>

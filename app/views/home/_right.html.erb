@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  	<p id="right-title"><%= Group.last.name%></p>
+  	<%= render :partial => 'group_users/form', :locals => {:group_user => GroupUser.new}%>
+		<br/>&nbsp;
+			<% Group.last.users.each do |e| %>
+	      <tr>
+	        <div class="col-md-1">
+	        	<tr><%= image_tag("icons/user.png",:size =>"17") %>
+	        </div>
+
+	        <div class="col-md-10">
+			      <td ><p id="e-name"><%= e.first_name %></p></td>
+	        </div>
+	      </tr>
+			<% end %>
+</div>
+
+
+
+
+
+
+<!-- 							<table class="table">
+			  <tr>
+			    <th align="center">Groups</th>
+			  </tr>
+			  		    <button type="button" class="btn btn-default"><%= link_to 'Add User to your Group', new_group_user_path %></button>   
+
+				<% @groups.empty? ? "" : @groups.each do |group| %>
+				  <tr>
+				    <td align="center"><%= link_to group.name, group_path(group) %></td>
+				  </tr>
+				<%end%>
+				</table> -->

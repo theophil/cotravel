@@ -28,8 +28,8 @@ class GroupUsersController < ApplicationController
 
     respond_to do |format|
       if @group_user.save
-        format.html { redirect_to @group_user, notice: 'Group user was successfully created.' }
-        format.json { render :show, status: :created, location: @group_user }
+        format.html { redirect_to root_path, notice: 'Group user was successfully created.' }
+        # format.json { render :show, status: :created, location: @group_user }
       else
         format.html { render :new }
         format.json { render json: @group_user.errors, status: :unprocessable_entity }

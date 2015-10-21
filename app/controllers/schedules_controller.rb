@@ -4,10 +4,8 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.last
+    @schedule = Schedule.last
     @test = "Testing Testing"
-
-
     # doesn't have the params
     @event = Event.new
   end
@@ -49,7 +47,7 @@ class SchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @schedule.update(schedule_params)
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }
+        format.html { redirect_to root_path notice: 'Schedule was successfully updated.' }
         format.json { render :show, status: :ok, location: @schedule }
       else
         format.html { render :edit }
@@ -112,7 +110,7 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:group_id, :start_date, :end_date, :location)
+      params.require(:schedule).permit(:group_id, :start_date, :end_date, :location, :name)
     end
 
     def event_params

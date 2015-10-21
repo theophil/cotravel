@@ -5,6 +5,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.datetime :start_date
       t.datetime :end_date
       t.string		:location
+      t.string :name
 
       t.timestamps
     end
